@@ -23,20 +23,22 @@ function ReferralStatsBanner() {
           </div>
         </div>
       </div>
-      <div className="flex-1 bg-gray-100 p-4 rounded-lg">
+      <div className="flex-1 bg-gray-100 p-4 ">
         <div className="flex items-center">
           <h2 className="text-xl font-bold flex-1">
             Your average rank in the markets you serve is:
           </h2>
-          <div className="flex items-center">
+          <div className="flex items-center lg:mr-5">
             <p className="text-4xl font-bold text-red-600">25</p>
             <img src="md-arrow-round-down.svg" alt="Icon description" className="ml-2" />
           </div>
         </div>
-        <PrimaryButton text="Learn more" onClick={() => { }} />
         <p className="text-sm font-medium mt-4">
           Your ranking will directly affect the number of referrals you receive. Learn about our <span className="text-red-600">Guaranteed Display</span> program to help improve your ranking.
         </p>
+      </div>
+      <div className="p-5 bg-gray-100">
+        <PrimaryButton text="Learn more" onClick={() => { }} />
       </div>
     </div>
   )
