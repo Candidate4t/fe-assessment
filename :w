@@ -12,9 +12,9 @@ const statsPaneItemData: StatsPaneItemAttributes[] = [
     color: "#00A3E0",
     icon: "face-smile-regular.svg",
     kpis: [
-      { title: "SOLD.com Leads", value: "500", type: "discreet" },
-      { title: "Customers we promoted you to", type: "percentage", value: "67" },
-      { title: "Appointments set with you", type: "discreet", value: "0" }
+      { title: "SOLD.com Leads", value: "500", type: "discreet"},
+      { title: "Customers we promoted you to", type: "percentage", value: "67"},
+      { title: "Appointments set with you", type: "discreet", value: "0"}
     ]
   },
   {
@@ -22,10 +22,10 @@ const statsPaneItemData: StatsPaneItemAttributes[] = [
     color: "#84AE2B",
     icon: "face-smile-regular.svg",
     kpis: [
-      { title: "Your signed agreements", value: "0", type: "discreet" },
-      { title: "Your closings", type: "discreet", value: "0" },
-      { title: "Your closed volume", type: "resume", value: "0" },
-      { title: "Your commission (est)", type: "resume", value: "0" }
+      { title: "Your signed agreements", value: "0", type: "discreet"},
+      { title: "Your closings", type: "discreet", value: "0"},
+      { title: "Your closed volume", type: "resume", value: "0"},
+      { title: "Your commission (est)", type: "resume", value: "0"}
     ]
   },
   {
@@ -33,10 +33,10 @@ const statsPaneItemData: StatsPaneItemAttributes[] = [
     color: "#F93822",
     icon: "icon-sad-face.svg",
     kpis: [
-      { title: "Appointments that signed with another agent", value: "n/a", type: "discreet" },
-      { title: "Lost closings", type: "discreet", value: "n/a" },
-      { title: "Lost volume", type: "resume", value: "n/a" },
-      { title: "Lost commission (est)", type: "resume", value: "n/a" }
+      { title: "Appointments that signed with another agent", value: "n/a", type: "discreet"},
+      { title: "Lost closings", type: "discreet", value: "n/a"},
+      { title: "Lost volume", type: "resume", value: "n/a"},
+      { title: "Lost commission (est)", type: "resume", value: "n/a"}
     ]
   }
 ]
@@ -44,7 +44,7 @@ const statsPaneItemData: StatsPaneItemAttributes[] = [
 export default function Home() {
   return (
     <div className="bg-white">
-      <div className="bg-[#25282A] px-6 md:px-12 lg:px-24 pt-8 pb-8">
+      <div className="bg-[#25282A] px-6 md:px-12 lg:px-24 pt-8">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-[6.5rem]">
           <div className="flex-1 lg:pl-10">
             <h1 className="text-xl md:text-2xl font-bold text-white">SOLD.com Difference</h1>
@@ -61,8 +61,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex px-4 justify-center items-center bg-gradient-to-b from-[#25282A] from-50% to-[#FFFFFF] to-50%">
-        <ReferralStatsBanner />
+      <div className="lg:relative md:h-50 lg:h-60">
+        <div className="lg:absolute inset-0 h-1/2 bg-[#25282A]"></div>
+        <div className="lg:absolute inset-0 top-1/2 h-1/2 bg-white"></div>
+        <div className="lg:absolute inset-0 flex justify-center items-center px-4 md:px-12">
+          <ReferralStatsBanner />
+        </div>
       </div>
       <div className="ml-4 md:ml-10 mt-6">
         <p className="font-semibold border-l-4 md:border-l-8 border-[#F93822] p-2">

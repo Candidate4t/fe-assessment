@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 function BannerResumePane() {
   return (
     <div className="bg-white p-4 rounded-lg py-[1.37rem] px-[2.1rem] min-h-[13.5rem]">
@@ -26,6 +27,5 @@ function BannerResumePane() {
     </div>
   );
 }
-
 export default BannerResumePane;
 
