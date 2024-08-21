@@ -8,7 +8,7 @@ const Dashboard = () => {
     router.replace('/');
   }, [router]);
 
-  return <div>Redirecting to the homepage...</div>;
+  return <div></div>;
 };
 
 export default Dashboard;

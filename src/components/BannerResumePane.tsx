@@ -2,8 +2,7 @@ import React from 'react';
 
 function BannerResumePane() {
   return (
-    <div className="bg-gray-800 p-6 rounded-lg">
-      <div className="bg-gray-200 p-4 rounded-lg">
+      <div className="bg-white p-4 rounded-lg py-[1.37rem] px-[2.1rem] min-h-[13.5rem]">
         <p className="text-center text-gray-700 font-semibold">
           In your zips over the last 18 months, we’ve originated:
         </p>
@@ -25,7 +24,6 @@ function BannerResumePane() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
 
