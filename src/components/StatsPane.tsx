@@ -3,8 +3,7 @@ import React, { useState, useEffect } from 'react';
 interface StatsPaneItemKpi {
   title: string;
   value: string;
-  type: 'percentage' | 'discreet';
-  is_resume?: boolean;
+  type: 'percentage' | 'discreet' | 'resume';
 }
 
 export interface StatsPaneItemAttributes {
@@ -18,36 +17,28 @@ export interface StatsPaneItemAttributes {
 export default function StatsPaneItem(params: StatsPaneItemAttributes) {
 
   return (
-    <div className="p-6 bg-white rounded-lg shadow-md w-full">
-      <div className="bg-gray-200 rounded-full flex justify-center items-center w-16 h-16">
+    <div className="bg-white rounded-sm border h-full  w-full">
+      <div className="ml-4 mt-4 bg-gray-200 rounded-full flex justify-center items-center w-16 h-16">
         <img src={params.icon} alt="Icon description" className="size-10" />
       </div>
-      <div className="divide-y">
-        <h2 className="text-4xl font-semibold">{params.title}</h2>
-        {params.kpis.map((item) => {
-          if (item.type === 'discreet') {
-            return (
-              <div className="mt-4 flex items-center" style={{ backgroundColor: item.is_resume ? "#F5F8FA" : "#FFFFFF" }} >
-                <p className="text-gray-500 flex-1 text-base">{item.title} </p>
-                <p className="text-3xl flex-1 text-right font-bold" style={{ color: params.color }}>{item.value}</p>
+      <div className="">
+        <h2 className="ml-4 mt-4 pb-4 text-4xl font-semibold">{params.title}</h2>
+        {params.kpis.map((item, index) => {
+          return (
+            <div className={(item.type != 'resume' ? "flex border-dashed " : "bg-gray-100 ") + (index != params.kpis.length - 1 && "border-b ") + "pt-1 pb-1 pl-4 pr-4 items-center"}>
+              <div className="flex-1">
+                <p className={(item.type == 'resume' ? "text-right " : "text-left ") + "font-medium text-base"}>{item.title} </p>
               </div>
-            );
-          } else if (item.type === 'percentage') {
-            return (
-              <div className="mt-4" style={{ color: item.is_resume ? "#F5F8FA" : "#FFFFFF" }} >
-                <p className="text-gray-500 text-base">{item.title}</p>
-                <div className="flex items-center">
-                  <div className="w-full bg-gray-200 h-2 flex rounded-full">
-                    <div className="h-2 bg-blue-600 rounded-full" style={{ width: item.value as number + "%" }} />
-                  </div>
-                  <p className="text-sm font-bold text-[{params.color}] ml-2">
-                    {item.value}
-                  </p>
-                </div>
-              </div>)
-          };
+              <div className="flex-1">
+                <p className={(index === 0 ? "text-3xl font-bold " : "text-2xl font-semibold ") + "flex-1 text-right"} style={{ color: params.color }}>{item.value}</p>
+                {item.type == 'percentage' && (
+                  <p className="text-xs text-right" style={{ color: params.color }}>({item.value}%) </p>
+                )}
+              </div>
+            </div>
+          )
         })}
       </div>
-    </div>
+    </div >
   );
 }
